@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Alarm</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background:  linear-gradient(to right, #ff7e5f, #feb47b);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+
+    .clock {
+      background: #fff;
+      width: 600px;
+      height: 300px;
+      padding: 20px;
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4개의 열 */
+      grid-template-rows: 0.5fr 1fr 1fr 1fr; /* 4개의 행 */
+      gap: 10px;
+       box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .battery-container {
+      background: #f2f2f2;
+      grid-column: 4; /* 첫 번째 열에 위치 */
+      grid-row: 1; /* 첫 번째 행에 위치 */
+      border-radius: 8px;
+      /* 중앙 정렬을 위한 Flexbox 사용 */
+      display: flex;
+      justify-content: center; /* 수평 중앙 정렬 */
+      align-items: center; /* 수직 중앙 정렬 */
+      gap: 10px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .battery {
+      width: 50px;
+      height: 50%;
+      border: 2px solid #333;
+      border-radius: 8px;
+      background: #fff;
+      overflow: hidden;
+    }
+    
+    .battery-level {
+      height: 100%;
+      background: #2dba1e;
+      transition: width 0.3s ease;
+    }
+    .battery-text {
+      font-size: 12px;
+      color: #333;
+    }
+    
+    .time {
+      background: #f9f9f9;
+      grid-column: 1 / span 3; /* 첫 번째 열에서 세 번째 열까지 차지 */
+      grid-row: 2 / span 2;/* 두 번째 행에 위치 */ 
+      border-radius: 10px;
+      font-size: 35px;
+      font-family: 'Courier New', monospace;      
+      color: #333;
+      white-space: pre-wrap;
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .alarm-list {
+      font-family: 'Courier New', monospace;
+      background: #f9f9f9;
+      grid-column: 4; /* 첫 번째 열에 위치 */
+      grid-row: 2 / span 2;
+      border-radius: 10px;
+      font-size: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+      align-items: center;
+      gap: 5px;
+      border: 1px solid #ddd;
+    }
+    
+    .alarm-item {
+      width: 90%;
+      height: 75%;
+      background-color: #f4f4f4;  /* 배경색 */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;  
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .new-alarm-item {
+      width: 95%;
+      height: 25%;
+      background-color: #e4e4e4;  /* 다른 배경색 */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 5px; 
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .remove-btn {
+      background: #ff3333;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .remove-btn:hover {
+      background: #ff1a1a;
+    }
+
+    .alarm-btn {
+      background: white;
+      grid-column: 1 / span 4;
+      grid-row: 4; /* 세 번째 행에 위치 */
+      text-align: center;
+      border: 1px;
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .alarm-btn button {
+      width: 80px;
+      height: 50px;
+      font-size: 18px;
+      background: #ff7e5f;
+      color: white;
+      border: None;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    
+    .alarm-btn button:hover {
+      background: #feb47b;
+    }
+    
+    .alarm-btn .add {
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      background: #ff4d4d;
+      color: white;
+      border-radius: 100px;
+    }
+    
+    .alarm-btn .add:hover {
+      background: #ff3333;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="clock">
+    <div class="battery-container">
+      <div class="battery">
+        <div class="battery-level" style="width: 100%;"></div>
+      </div>
+      <div class="battery-text">100%</div>
+    </div>
+    <div class="time">time</div>
+    <div class="alarm-list">
+      <div>Alarm List</div>
+      <div class="alarm-item"></div>
+    </div>
+    <div class="alarm-btn">
+      <button class="hh">hh</button>
+      <button class="mm">mm</button>
+      <button class="ss">ss</button>
+      <button class="add">+</button>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+
+</body>
+</html>

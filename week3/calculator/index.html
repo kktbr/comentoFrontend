@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+    
+    .calculator {
+      background: white;
+      width: 300px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+        
+    .calculator input[id="process"] {
+      background: #f4f4f4;
+      width: 100%;
+      height: 50px;
+      margin: 5px 0;
+      font-size: 25px;
+      text-align: right;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    
+            
+    .calculator input[id="result"] {
+      background: #f4f4f4;
+      width: 100%;
+      height: 30px;
+      margin: 0 0 5px 0;
+      font-size: 20px;
+      color: #3d3b3b;
+      text-align: right;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+         
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+   
+    .buttons button {
+      height: 50px;
+      font-size: 18px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+    
+    .buttons button:hover {
+      background: #0056b3;
+    }
+    
+    .buttons .del {
+      background: #636364;
+      height: 25px;
+      grid-column: 4; 
+      border-radius: 5;
+      font-size: 15px;
+    }
+    
+    .buttons .del:hover {
+      background: #535354;
+    }
+    
+    .buttons .op {
+      background: #f4f4f4;
+      color: black;
+      font-size: 25px;
+    }
+    
+    .buttons .op:hover {
+      background: #e0e0e0;
+    }
+    
+    .buttons .clear {
+      background: #dc3545;
+      color: white;
+      font-size: 25px;
+    }
+    
+    .buttons .clear:hover {
+      background: #a71d2a;
+    }
+    
+    .buttons .equal {
+      background: #28a745;
+      color: white;
+    }
+    
+    .buttons .equal:hover {
+      background: #1c7c31;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="process" placeholder="0" readonly>
+    <input type="text" id="result" placeholder="0" readonly>
+    <div class="buttons">
+      <button class="del">del</button>  
+      <button class="clear">C</button>
+      <button class="op">( )</button>
+      <button class="op" style="font-size: 18px;">mod</button>
+      <button class="op">÷</button>
+      
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button class="op">×</button>
+      
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button class="op">-</button>
+      
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button class="op">+</button>
+      
+      <button>+/-</button>
+      <button>0</button>
+      <button>.</button>
+      <button class="op">=</button>      
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  
+</body>
+</html>
