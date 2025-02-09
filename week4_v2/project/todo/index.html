@@ -9,12 +9,28 @@
 <body>
   <div class="todo-container">
     <h1 id="title">To-Do List 😎</h1>
+    <div id="week-container">
+      <button class="day-btn" data-day="Sun">Sun</button>
+      <button class="day-btn" data-day="Mon">Mon</button>
+      <button class="day-btn" data-day="Tue">Tue</button>
+      <button class="day-btn" data-day="Wed">Wed</button>
+      <button class="day-btn" data-day="Thu">Thu</button>
+      <button class="day-btn" data-day="Fri">Fri</button>
+      <button class="day-btn" data-day="Sat">Sat</button>
+    </div>
     <div class="input-container">
       <input type="text" id="to-do" placeholder="Enter your task...">
       <button id="add-btn">+</button>
     </div>
-    <ul class="todo-list" id="todo-list">   
-    </ul>
+    <div id="todo-lists">
+      <ul class="todo-list" id="sun-list"></ul>
+      <ul class="todo-list" id="mon-list"></ul>
+      <ul class="todo-list" id="tue-list"></ul>
+      <ul class="todo-list" id="wed-list"></ul>
+      <ul class="todo-list" id="thu-list"></ul>
+      <ul class="todo-list" id="fri-list"></ul>
+      <ul class="todo-list" id="sat-list"></ul>
+    </div>
   </div>
 
   <script src="script.js"></script>
