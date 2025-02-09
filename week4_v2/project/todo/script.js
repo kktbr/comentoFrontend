@@ -5,7 +5,7 @@ if (loggedInUserId) {
   console.log('로그인한 유저 아이디:', loggedInUserId);
 
   // 유저 아이디를 타이틀에 표시
-  document.getElementById('title').textContent = `${loggedInUserId}'s To-Do List 😎`;
+  document.getElementById('title').textContent = `${loggedInUserId}'s To Do List 😎`;
 } else {
   console.log('로그인되지 않은 사용자');
 }
